@@ -119,4 +119,14 @@ export default function App() {
     afficherToast('Supprimée', 'info'); chargerConfigs();
   }
 
-  function exporterCSV() {
+function exporterCSV() {
+  const header = 'Étage;Lots;Prix unitaire;Total\n';
+  const rows = [];
+  const csv = header + rows.join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'simulation-prix.csv';
+  a.click();
+}
