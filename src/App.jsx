@@ -120,4 +120,3 @@ export default function App() {
   }
 
   function exporterCSV() {
-    const header = 'L
